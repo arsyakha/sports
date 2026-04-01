@@ -14,9 +14,15 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #000;
     color: #fff;
     text-align: center;
+
+    /* 🔥 BACKGROUND KEREN */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* 🔝 BANNER */
@@ -25,7 +31,8 @@ body {
     top: 0;
     width: 100%;
     height: 60px;
-    background: #111;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -34,15 +41,15 @@ body {
 
 /* CONTENT */
 .container {
-    padding-top: 80px;
+    padding-top: 90px;
 }
 
 /* 🔴 LIVE BADGE */
 .live-badge {
     display: inline-block;
     background: red;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 8px 18px;
+    border-radius: 30px;
     font-weight: bold;
     margin-bottom: 15px;
     animation: blink 1s infinite;
@@ -54,49 +61,71 @@ body {
     100% {opacity: 1;}
 }
 
-/* 🖼️ IMAGE */
-.hero-img {
+/* TITLE */
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* PLAYER BOX */
+.player-box {
+    position: relative;
     width: 90%;
-    max-width: 600px;
-    border-radius: 10px;
+    max-width: 650px;
     margin: 20px auto;
-    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(255,0,0,0.6);
 }
 
-/* 🎯 CTA BUTTON */
-.cta-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    background: linear-gradient(45deg, #ff0000, #ff6600);
-    border-radius: 8px;
-    text-decoration: none;
-    animation: pulse 1.2s infinite;
+.player-box img {
+    width: 100%;
 }
 
-@keyframes pulse {
-    0% {transform: scale(1);}
-    50% {transform: scale(1.08);}
-    100% {transform: scale(1);}
+/* PLAY BUTTON */
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    padding: 20px 28px;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.player-box:hover .play-btn {
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* TEXT */
 .desc {
     margin: 15px;
     font-size: 16px;
-    color: #ccc;
+    color: #ddd;
 }
 
-/* 🔥 FULL CLICK AREA */
-.click-layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/* 🔥 CTA */
+.cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 16px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #ff0000, #ff9900);
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(255,0,0,0.8);
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.07);}
+    100% {transform: scale(1);}
 }
 </style>
 </head>
@@ -117,17 +146,23 @@ body {
     <script src="https://spreadpreferencetelevision.com/d39b4de05dbb9da76839870e06034801/invoke.js"></script>
 </div>
 
-<!-- 📺 CONTENT -->
 <div class="container">
 
     <div class="live-badge">🔴 LIVE NOW</div>
 
-    <h1>Watch Live Sports Streaming</h1>
+    <h1>Watch Live Sports HD Streaming</h1>
 
-    <img class="hero-img" src="https://store.streamspell.com/cdn/shop/products/Superstar-Stream-Package-2_1200x1200.gif?v=1756298656" alt="Live Sports">
+    <!-- 🎬 FAKE PLAYER -->
+    <div class="player-box">
+        <a href="https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=JONI">
+            <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Live Match">
+            <div class="play-btn">▶</div>
+        </a>
+    </div>
 
     <p class="desc">
-        High Quality Streaming • No Buffer • All Matches Available  
+        Full HD • No Buffering • All Matches Available  
+        Click play and start watching instantly.
     </p>
 
     <!-- 🎯 CTA -->
@@ -136,19 +171,6 @@ body {
     </a>
 
 </div>
-
-<!-- 🔥 DIRECT CLICK (SEMUA AREA) -->
-<script>
-var link = "https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=JONI";
-
-document.body.addEventListener("click", function() {
-    window.location.replace(link);
-});
-
-document.body.addEventListener("touchstart", function() {
-    window.location.replace(link);
-});
-</script>
 
 <!-- 📊 HISTATS -->
 <script type="text/javascript">
@@ -164,12 +186,6 @@ hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();
 </script>
-
-<noscript>
-<a href="/" target="_blank">
-<img src="//sstatic1.histats.com/0.gif?4798012&101" alt="stats" border="0">
-</a>
-</noscript>
 
 </body>
 </html>
