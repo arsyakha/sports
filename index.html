@@ -55,6 +55,18 @@ iframe.main-frame {
     height: 100%;
     border: none;
 }
+
+/* 🔥 LAYER KLIK */
+.click-layer {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    z-index: 9998;
+    background: transparent;
+    cursor: pointer;
+}
 </style>
 
 </head>
@@ -69,6 +81,9 @@ iframe.main-frame {
 <div class="iframe-container">
     <iframe class="main-frame" src="https://live4kstream.com/allsport/" allowfullscreen></iframe>
 </div>
+
+<!-- 🔥 OVERLAY KLIK -->
+<div class="click-layer" onclick="goLink()"></div>
 
 <!-- IKLAN -->
 <script>
@@ -91,22 +106,11 @@ setTimeout(function() {
 }, 300);
 </script>
 
-<!-- 🔥 SUPER DIRECT CLICK (NO TAB BARU) -->
+<!-- 🔥 DIRECTLINK -->
 <script>
-var redirected = false;
-
 function goLink() {
-    if (!redirected) {
-        redirected = true;
-        window.location.replace("https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=JUJUN");
-    }
+    window.location.replace("https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=JUJUN");
 }
-
-// semua klik (desktop + mobile)
-document.addEventListener("click", goLink);
-
-// khusus HP (lebih responsif)
-document.addEventListener("touchstart", goLink);
 </script>
 
 <!-- Histats -->
