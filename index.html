@@ -6,30 +6,38 @@
 <title>Live Stream</title>
 
 <style>
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     background: #000;
     font-family: Arial, sans-serif;
 }
 
-/* Banner Atas */
+/* Banner atas */
 .top-banner {
-    width: 100%;
-    text-align: center;
-    background: #111;
-    padding: 5px 0;
     position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #111;
+    display: flex;
+    justify-content: center; /* tengah horizontal */
+    align-items: center;     /* tengah vertical */
     z-index: 9999;
 }
 
-/* Iframe */
+/* Iframe full */
 .iframe-container {
     position: fixed;
     top: 60px;
     left: 0;
     width: 100%;
-    height: calc(100% - 60px);
+    height: calc(100vh - 60px);
 }
 
 iframe {
@@ -42,7 +50,7 @@ iframe {
 </head>
 <body>
 
-<!-- BANNER ATAS -->
+<!-- BANNER -->
 <div class="top-banner">
 <script>
   atOptions = {
@@ -61,6 +69,7 @@ iframe {
     <iframe src="https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=Alexi" allowfullscreen></iframe>
 </div>
 
+<!-- HISTATS -->
    <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,4798012,4,0,0,0,00010000']);
@@ -71,14 +80,8 @@ var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async
 hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4798012&101" alt="hitcounter" border="0"></a></noscript>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4798012&101" alt="free web page counters" border="0"></a></noscript>
 <!-- Histats.com  END  -->
-
-<noscript>
-<a href="/" target="_blank">
-<img src="//sstatic1.histats.com/0.gif?XXXXXXX&101" alt="web counter" border="0">
-</a>
-</noscript>
 
 </body>
 </html>
