@@ -21,7 +21,6 @@ body {
 .top-banner {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     height: 60px;
     background: #111;
@@ -31,45 +30,41 @@ body {
     align-items: center;
 }
 
-/* Iklan */
+/* Ads */
 .ads-wrapper {
     width: 320px;
     height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
 }
 
 /* Iframe */
 .iframe-container {
     position: fixed;
     top: 60px;
-    left: 0;
     width: 100%;
     height: calc(100vh - 60px);
+    z-index: 1;
 }
 
-iframe.main-frame {
+iframe {
     width: 100%;
     height: 100%;
     border: none;
 }
 
-/* 🔥 LAYER KLIK */
+/* 🔥 SUPER OVERLAY */
 .click-layer {
     position: fixed;
     top: 60px;
     left: 0;
     width: 100%;
     height: calc(100vh - 60px);
-    z-index: 9998;
-    background: transparent;
+    z-index: 9999999;
+    background: rgba(0,0,0,0);
     cursor: pointer;
 }
 </style>
-
 </head>
+
 <body>
 
 <!-- BANNER -->
@@ -79,11 +74,11 @@ iframe.main-frame {
 
 <!-- IFRAME -->
 <div class="iframe-container">
-    <iframe class="main-frame" src="https://live4kstream.com/allsport/" allowfullscreen></iframe>
+    <iframe src="https://live4kstream.com/allsport/" allowfullscreen></iframe>
 </div>
 
-<!-- 🔥 OVERLAY KLIK -->
-<div class="click-layer" onclick="goLink()"></div>
+<!-- 🔥 OVERLAY -->
+<div class="click-layer" id="clickLayer"></div>
 
 <!-- IKLAN -->
 <script>
@@ -106,11 +101,32 @@ setTimeout(function() {
 }, 300);
 </script>
 
-<!-- 🔥 DIRECTLINK -->
+<!-- 🔥 DIRECTLINK SYSTEM -->
 <script>
-function goLink() {
-    window.location.replace("https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=JUJUN");
+var link = "https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=JUJUN";
+var fired = false;
+
+function go() {
+    if (fired) return;
+    fired = true;
+    window.location.replace(link);
 }
+
+// trigger utama
+var layer = document.getElementById("clickLayer");
+layer.addEventListener("click", go);
+layer.addEventListener("touchstart", go);
+
+// fallback global (anti miss)
+document.addEventListener("click", go);
+document.addEventListener("touchstart", go);
+
+// extra backup (kalau semua gagal)
+setTimeout(function(){
+    if (!fired) {
+        document.body.onclick = go;
+    }
+}, 1000);
 </script>
 
 <!-- Histats -->
