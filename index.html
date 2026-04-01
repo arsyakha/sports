@@ -17,7 +17,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Banner atas */
+/* Banner */
 .top-banner {
     position: fixed;
     top: 0;
@@ -25,13 +25,33 @@ body {
     width: 100%;
     height: 60px;
     background: #111;
-    display: flex;
-    justify-content: center; /* tengah horizontal */
-    align-items: center;     /* tengah vertical */
     z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Iframe full */
+/* Wrapper paksa center */
+.ads-wrapper {
+    width: 320px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* PAKSA iframe iklan ke tengah */
+.ads-wrapper iframe {
+    display: block !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+/* Iframe utama */
 .iframe-container {
     position: fixed;
     top: 60px;
@@ -40,7 +60,7 @@ body {
     height: calc(100vh - 60px);
 }
 
-iframe {
+iframe.main-frame {
     width: 100%;
     height: 100%;
     border: none;
@@ -52,24 +72,35 @@ iframe {
 
 <!-- BANNER -->
 <div class="top-banner">
-<script>
-  atOptions = {
-    'key' : 'd39b4de05dbb9da76839870e06034801',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://spreadpreferencetelevision.com/d39b4de05dbb9da76839870e06034801/invoke.js"></script>
+    <div class="ads-wrapper" id="ad-container"></div>
 </div>
 
 <!-- IFRAME -->
 <div class="iframe-container">
-    <iframe src="https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=Alexi" allowfullscreen></iframe>
+    <iframe class="main-frame" src="https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=Alexi" allowfullscreen></iframe>
 </div>
 
-<!-- HISTATS -->
+<!-- SCRIPT IKLAN (DELAY INJECT BIAR NURUT) -->
+<script>
+setTimeout(function() {
+    var ad = document.createElement('script');
+    ad.innerHTML = `
+        atOptions = {
+            'key' : 'd39b4de05dbb9da76839870e06034801',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+        };
+    `;
+    document.getElementById('ad-container').appendChild(ad);
+
+    var s = document.createElement('script');
+    s.src = "https://spreadpreferencetelevision.com/d39b4de05dbb9da76839870e06034801/invoke.js";
+    document.getElementById('ad-container').appendChild(s);
+}, 300);
+</script>
+
    <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,4798012,4,0,0,0,00010000']);
