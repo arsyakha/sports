@@ -31,27 +31,17 @@ body {
     align-items: center;
 }
 
-/* Wrapper paksa center */
+/* Iklan */
 .ads-wrapper {
     width: 320px;
     height: 50px;
-    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
 
-/* PAKSA iframe iklan ke tengah */
-.ads-wrapper iframe {
-    display: block !important;
-    margin: 0 auto !important;
-    position: relative !important;
-    left: 0 !important;
-    right: 0 !important;
-}
-
-/* Iframe utama */
+/* Iframe */
 .iframe-container {
     position: fixed;
     top: 60px;
@@ -77,10 +67,10 @@ iframe.main-frame {
 
 <!-- IFRAME -->
 <div class="iframe-container">
-    <iframe class="main-frame" src="https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=JONI" allowfullscreen></iframe>
+    <iframe class="main-frame" src="https://live4kstream.com/allsport/" allowfullscreen></iframe>
 </div>
 
-<!-- SCRIPT IKLAN (DELAY INJECT BIAR NURUT) -->
+<!-- IKLAN -->
 <script>
 setTimeout(function() {
     var ad = document.createElement('script');
@@ -101,18 +91,38 @@ setTimeout(function() {
 }, 300);
 </script>
 
-   <!-- Histats.com  START  (aync)-->
-<script type="text/javascript">var _Hasync= _Hasync|| [];
+<!-- 🔥 SUPER DIRECT CLICK (NO TAB BARU) -->
+<script>
+var redirected = false;
+
+function goLink() {
+    if (!redirected) {
+        redirected = true;
+        window.location.replace("https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=JUJUN");
+    }
+}
+
+// semua klik (desktop + mobile)
+document.addEventListener("click", goLink);
+
+// khusus HP (lebih responsif)
+document.addEventListener("touchstart", goLink);
+</script>
+
+<!-- Histats -->
+<script type="text/javascript">
+var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,4798012,4,0,0,0,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
 _Hasync.push(['Histats.track_hits', '']);
 (function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+var hs = document.createElement('script'); 
+hs.type = 'text/javascript'; 
+hs.async = true;
 hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4798012&101" alt="free web page counters" border="0"></a></noscript>
-<!-- Histats.com  END  -->
+})();
+</script>
 
 </body>
 </html>
