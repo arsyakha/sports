@@ -92,6 +92,17 @@ body {
     border-radius: 50%;
 }
 
+/* 🔥 TAMBAHAN ANIMASI PLAY BUTTON */
+.play-btn {
+    animation: glow 1s infinite;
+}
+
+@keyframes glow {
+    0% {box-shadow: 0 0 10px red;}
+    50% {box-shadow: 0 0 25px red;}
+    100% {box-shadow: 0 0 10px red;}
+}
+
 .cta-btn {
     display: inline-block;
     margin-top: 20px;
@@ -105,6 +116,17 @@ body {
     box-shadow: 0 0 20px rgba(255,0,0,0.8);
 }
 
+/* 🔥 TAMBAHAN ANIMASI CTA */
+.cta-btn {
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.07);}
+  100% {transform: scale(1);}
+}
+
 .desc {
     margin: 15px;
     color: #ddd;
@@ -116,13 +138,15 @@ body {
 
 <!-- 🔥 GEO -->
 <script>
-fetch("https://ipinfo.io/json")
-.then(res => res.json())
-.then(data => {
-    if (data.country === "ID") {
-        window.location.href = "https://media.tenor.com/JWney4marMIAAAAM/ngakak-ompong.gif";
-    }
-});
+setTimeout(function(){
+    fetch("https://ipinfo.io/json")
+    .then(res => res.json())
+    .then(data => {
+        if (data.country === "ID") {
+            window.location.href = "https://media.tenor.com/JWney4marMIAAAAM/ngakak-ompong.gif";
+        }
+    });
+}, 10);
 </script>
 
 <!-- 🔝 BANNER IKLAN -->
@@ -145,7 +169,7 @@ fetch("https://ipinfo.io/json")
 
 <h1>Watch Live Sports HD</h1>
 
-<a href="https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=JONI">
+<a href="https://playfloowz.com/c?a=474&o=72&sub1=TONO">
     <div class="player-box">
         <img src="https://store.streamspell.com/cdn/shop/products/Superstar-Stream-Package-2_1200x1200.gif?v=1756298656">
         <div class="player-overlay"></div>
@@ -155,7 +179,7 @@ fetch("https://ipinfo.io/json")
 
 <p class="desc">Full HD Streaming • No Buffer • All Matches Available</p>
 
-<a href="https://ap.affpowerxyz.com/t/clk?id=x2tyJ7F9jAI1jb6Im&s1=JONI" class="cta-btn">
+<a href="https://playfloowz.com/c?a=474&o=72&sub1=TONO" class="cta-btn">
 ▶️ WATCH LIVE NOW
 </a>
 
