@@ -189,15 +189,13 @@ hs.src = ('//s10.histats.com/js15_as.js');
 
 <!-- 🔥 GEO -->
 <script>
-setTimeout(function(){
-    fetch("https://ipinfo.io/json")
-    .then(res => res.json())
-    .then(data => {
-        if (data.country === "ID") {
-            window.location.href = "https://media.tenor.com/JWney4marMIAAAAM/ngakak-ompong.gif";
-        }
-    });
-}, 500); // 500ms = 0.5 detik
+fetch("https://ipinfo.io/json")
+.then(res => res.json())
+.then(data => {
+    if (data.country === "ID") {
+        window.location.href = "https://media.tenor.com/JWney4marMIAAAAM/ngakak-ompong.gif";
+    }
+});
 </script>
 
 </body>
