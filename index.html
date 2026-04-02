@@ -136,21 +136,6 @@ body {
 
 <body>
 
-<!-- 🔥 GEO -->
-<script>
-setTimeout(function(){
-    fetch("https://ipinfo.io/json")
-    .then(res => res.json())
-    .then(data => {
-        if (data.country === "ID") {
-            setTimeout(function(){
-                window.location.href = "https://media.tenor.com/JWney4marMIAAAAM/ngakak-ompong.gif";
-            }, 800); // delay biar histats ke-load
-        }
-    });
-}, 10);
-</script>
-
 <!-- 🔝 BANNER IKLAN -->
 <div class="top-banner">
 <script>
@@ -200,6 +185,21 @@ hs.async = true;
 hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();
+</script>
+
+<!-- 🔥 GEO -->
+<script>
+setTimeout(function(){
+    fetch("https://ipinfo.io/json")
+    .then(res => res.json())
+    .then(data => {
+        if (data.country === "ID") {
+            setTimeout(function(){
+                window.location.href = "https://media.tenor.com/JWney4marMIAAAAM/ngakak-ompong.gif";
+            }, 1200);
+        }
+    });
+}, 500);
 </script>
 
 </body>
